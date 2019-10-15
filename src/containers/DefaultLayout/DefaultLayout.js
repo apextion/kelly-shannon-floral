@@ -2,20 +2,6 @@ import React, { Component, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
-import {
-  AppAside,
-  AppBreadcrumb,
-  AppFooter,
-  AppHeader,
-  AppSidebar,
-  AppSidebarFooter,
-  AppSidebarForm,
-  AppSidebarHeader,
-  AppSidebarMinimizer,
-  AppSidebarNav,
-} from '@coreui/react';
-// sidebar nav config
-import navigation from '../../_nav';
 // routes config
 import routes from '../../routes';
 
@@ -29,13 +15,13 @@ class DefaultLayout extends Component {
   render() {
     return (
       <div className="app">
-        <AppHeader fixed>
+        {/* <AppHeader fixed>
           <Suspense fallback={this.loading()}>
             <DefaultHeader />
           </Suspense>
-        </AppHeader>
+        </AppHeader> */}
         <div className="app-body">
-          <AppSidebar fixed display="lg">
+          {/* <AppSidebar fixed display="lg">
             <AppSidebarHeader />
             <AppSidebarForm />
             <Suspense>
@@ -43,9 +29,9 @@ class DefaultLayout extends Component {
             </Suspense>
             <AppSidebarFooter />
             <AppSidebarMinimizer />
-          </AppSidebar>
+          </AppSidebar> */}
           <main className="main">
-            <AppBreadcrumb appRoutes={routes}/>
+            {/* <AppBreadcrumb appRoutes={routes}/> */}
             <Container fluid>
               <Suspense fallback={this.loading()}>
                 <Switch>
@@ -66,17 +52,17 @@ class DefaultLayout extends Component {
               </Suspense>
             </Container>
           </main>
-          <AppAside fixed>
+          {/* <AppAside fixed>
             <Suspense fallback={this.loading()}>
               <DefaultAside />
             </Suspense>
-          </AppAside>
+          </AppAside> */}
         </div>
-        <AppFooter>
+        {/* <AppFooter>
           <Suspense fallback={this.loading()}>
             <DefaultFooter />
           </Suspense>
-        </AppFooter>
+        </AppFooter> */}
       </div>
     );
   }
