@@ -1,55 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "295c2a76f5f2a9f9d6043d5a090a9a33",
+    "revision": "f4bb59a27d6ef7f055c73a344e462b4c",
     "url": "/kelly-shannon-floral/index.html"
   },
   {
-    "revision": "0dc7f24d156c134bc1c5",
+    "revision": "df7ef1cb0d54eea492b2",
     "url": "/kelly-shannon-floral/static/css/2.64294dea.chunk.css"
   },
   {
-    "revision": "75f0817b6b1cc1cc6a95",
-    "url": "/kelly-shannon-floral/static/css/3.fa4a79a6.chunk.css"
-  },
-  {
-    "revision": "b25eb85035136fa1793c",
+    "revision": "17d3b550ce2d47436490",
     "url": "/kelly-shannon-floral/static/css/main.297b0e7f.chunk.css"
   },
   {
-    "revision": "0dc7f24d156c134bc1c5",
-    "url": "/kelly-shannon-floral/static/js/2.bede0d7e.chunk.js"
+    "revision": "df7ef1cb0d54eea492b2",
+    "url": "/kelly-shannon-floral/static/js/2.823cc9d6.chunk.js"
   },
   {
-    "revision": "75f0817b6b1cc1cc6a95",
-    "url": "/kelly-shannon-floral/static/js/3.3edcf2dd.chunk.js"
+    "revision": "691bf84b56b01e79de3e",
+    "url": "/kelly-shannon-floral/static/js/3.5e3a91af.chunk.js"
   },
   {
-    "revision": "b331e68e5dac8d009a30",
-    "url": "/kelly-shannon-floral/static/js/4.376a3318.chunk.js"
+    "revision": "753237fe661cab8aa3e7",
+    "url": "/kelly-shannon-floral/static/js/4.d5952edd.chunk.js"
   },
   {
-    "revision": "8c7de842213dd830cdcc",
-    "url": "/kelly-shannon-floral/static/js/5.407613a2.chunk.js"
+    "revision": "17d3b550ce2d47436490",
+    "url": "/kelly-shannon-floral/static/js/main.9704f6a4.chunk.js"
   },
   {
-    "revision": "2e0fe16d206ccd634ca5",
-    "url": "/kelly-shannon-floral/static/js/6.d79f9d85.chunk.js"
-  },
-  {
-    "revision": "35f03fe41745ebff207b",
-    "url": "/kelly-shannon-floral/static/js/7.6933b866.chunk.js"
-  },
-  {
-    "revision": "a0a93a79b79050c21a8e",
-    "url": "/kelly-shannon-floral/static/js/8.5fc73c09.chunk.js"
-  },
-  {
-    "revision": "b25eb85035136fa1793c",
-    "url": "/kelly-shannon-floral/static/js/main.ae9f4766.chunk.js"
-  },
-  {
-    "revision": "3cfdf8628217c8171747",
-    "url": "/kelly-shannon-floral/static/js/runtime-main.3992624c.js"
+    "revision": "d90b5f2e70d259b1779f",
+    "url": "/kelly-shannon-floral/static/js/runtime-main.5e18d56f.js"
   },
   {
     "revision": "0087dce419a7376eb06c837f740d31eb",
@@ -1196,10 +1176,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kelly-shannon-floral/static/media/lk.f54e1ef9.svg"
   },
   {
-    "revision": "406a451a2fcca915f0da5704dcdb451c",
-    "url": "/kelly-shannon-floral/static/media/logo.406a451a.svg"
-  },
-  {
     "revision": "039251e3b986c21ad72336c16b0cf940",
     "url": "/kelly-shannon-floral/static/media/lr.039251e3.svg"
   },
@@ -1854,10 +1830,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "73690f50d6d4106fbd4c8ac3a556b985",
     "url": "/kelly-shannon-floral/static/media/sy.73690f50.svg"
-  },
-  {
-    "revision": "c8d5c2d9c0e8849271af0664df052817",
-    "url": "/kelly-shannon-floral/static/media/sygnet.c8d5c2d9.svg"
   },
   {
     "revision": "5419df5b7775575728a3bd911d55a03a",
