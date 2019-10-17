@@ -5,9 +5,9 @@ import { Container } from 'reactstrap';
 // routes config
 import routes from '../../routes';
 
-const DefaultAside = React.lazy(() => import('./DefaultAside'));
-const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
-const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
+// const DefaultAside = React.lazy(() => import('./DefaultAside'));
+// const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
+// const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
   loading = () => <div className="animated fadeIn pt-1 text-center"><div className="sk-spinner sk-spinner-pulse"></div></div>;

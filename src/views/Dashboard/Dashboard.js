@@ -13,56 +13,84 @@ import {
   Input,
 } from 'reactstrap';
 
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-
-
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.setState({
-      copied: false
-    });
-  }
-
+  
   render() {
+
+    const handleChange = () => {
+      const elemTitle = document.getElementById('eventTitle');
+      const elemLocation = document.getElementById('eventLocation');
+      const elemDate = document.getElementById('eventDate');
+      const elemOutput = document.getElementById('output');
+  
+      const outputText = `<a href=targetURL.html?eventTitle=${elemTitle.value}&eventLocation=${elemLocation.value}&eventDate=${elemDate.value}>
+          LINK TEXT
+        </a>`;
+
+      elemOutput.value = outputText;      
+    }
+
+    const handleCopy = () => {
+      const elemOutput = document.getElementById('output');
+      elemOutput.select();
+      document.execCommand('copy');
+    }
+
     return (
       <div className="animated fadeIn">
         <Card>
           <CardHeader>
-            Event Link Creation tool
+            <strong>Kelly Shannon Floral - Event Link Creation tool</strong>
           </CardHeader>
           <CardBody>
             <CardText></CardText>
             <Form>
               <FormGroup>
                 <Label for="eventTitle">Event Title</Label>
-                <Input type="text" name="eventTitle" id="eventTitle" placeholder="Mr. Chapman's Wake" />
+                <Input 
+                  onChange={handleChange} 
+                  type="text" 
+                  name="eventTitle" 
+                  id="eventTitle" 
+                  placeholder="Mr. Chapman's Wake" />
               </FormGroup>
 
               <FormGroup>
                 <Label for="eventLocation">Event Location</Label>
-                <Input type="text" name="eventLocation" id="eventLocation" placeholder="Newcomer Funeral Home - Orlando, Fl " />
+                <Input 
+                  onChange={handleChange} 
+                  type="text" 
+                  name="eventLocation" 
+                  id="eventLocation" 
+                  placeholder="Newcomer Funeral Home - Orlando, Fl " />
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleDate">Date</Label>
+                <Label for="eventDate">Date</Label>
                 <Input
+                  onChange={handleChange}
                   type="date"
-                  name="date"
-                  id="exampleDate"
-                  placeholder="date placeholder"
+                  name="eventDate"
+                  id="eventDate"
                 />
               </FormGroup>
             </Form>
           </CardBody>
           <CardFooter>
-            <CopyToClipboard 
-              text="Some Static Text to Copy"
-              onCopy={() => this.setState({copied: true})}>
-              <Button {...(false) ? {color: 'success'} : {color: 'primary'}}>
-                  Copy Link
-              </Button>
-            </CopyToClipboard>
+
+            <FormGroup>
+              <Label for="output">Link Code</Label>
+              <Input
+                type="textarea"
+                name="output"
+                id="output"
+                readOnly
+              />
+            </FormGroup>
+
+            <Button onClick={handleCopy} {...(false) ? {color: 'success'} : {color: 'primary'}}>
+                Copy Link Code
+            </Button>
           </CardFooter>
         </Card>
       </div>
