@@ -17,13 +17,17 @@ class Dashboard extends Component {
   
   render() {
 
+    const clean = str => {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     const handleChange = () => {
       const elemTitle = document.getElementById('eventTitle');
       const elemLocation = document.getElementById('eventLocation');
       const elemDate = document.getElementById('eventDate');
       const elemOutput = document.getElementById('output');
   
-      const outputText = `<a href=targetURL.html?eventTitle=${elemTitle.value}&eventLocation=${elemLocation.value}&eventDate=${elemDate.value}>
+      const outputText = `<a href=targetURL.html?eventTitle=${clean(elemTitle.value)}&eventLocation=${clean(elemLocation.value)}&eventDate=${clean(elemDate.value)}>
           LINK TEXT
         </a>`;
 
