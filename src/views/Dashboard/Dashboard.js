@@ -13,8 +13,15 @@ import {
   Input,
 } from 'reactstrap';
 
+// Google Analytics
+import ReactGA from 'react-ga';
+
 class Dashboard extends Component {
-  
+  componentDidMount(){
+    ReactGA.initialize('UA-150279426-1');
+    ReactGA.pageview('/dashboard');
+  }
+
   render() {
 
     const clean = str => {
@@ -34,10 +41,20 @@ class Dashboard extends Component {
       elemOutput.value = outputText;      
     }
 
-    const handleCopy = () => {
+    const handleCopy = (e) => {
       const elemOutput = document.getElementById('output');
       elemOutput.select();
       document.execCommand('copy');
+
+      ReactGA.event({
+        category: 'User Triggered',
+        label: 'Tool',
+        action: 'Copied Link Code'
+      });
+      
+      e.target.classList.remove('btn-primary');
+      e.target.classList.add('btn-success');
+
     }
 
     return (
@@ -93,7 +110,7 @@ class Dashboard extends Component {
             </FormGroup>
 
             <Button onClick={handleCopy} {...(false) ? {color: 'success'} : {color: 'primary'}}>
-                Copy Link Code
+                Copy to Clipboard
             </Button>
           </CardFooter>
         </Card>
