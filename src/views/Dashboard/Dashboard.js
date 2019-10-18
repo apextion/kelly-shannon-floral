@@ -25,7 +25,7 @@ class Dashboard extends Component {
   render() {
 
     const clean = str => {
-      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      return encodeURIComponent(str);
     }
 
     const handleChange = () => {
@@ -33,9 +33,15 @@ class Dashboard extends Component {
       const elemLocation = document.getElementById('eventLocation');
       const elemDate = document.getElementById('eventDate');
       const elemOutput = document.getElementById('output');
-  
-      const outputText = `<a href=targetURL.html?eventTitle=${clean(elemTitle.value)}&eventLocation=${clean(elemLocation.value)}&eventDate=${clean(elemDate.value)}>
-          LINK TEXT
+
+      const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      
+      // Hard fix time to get off of midnight and trigger wrong date
+      const dateStr = new Date(`${elemDate.value}T10:00:00`).toLocaleDateString("en-US", dateOptions);
+
+      const query = `eventTitle=${clean(elemTitle.value)}&eventLocation=${clean(elemLocation.value)}&eventDate=${dateStr}`;
+      const outputText = `<a href='https://reactivepixel.com/?${query}'>
+          Send Flowers Now
         </a>`;
 
       elemOutput.value = outputText;      
@@ -54,7 +60,13 @@ class Dashboard extends Component {
       
       e.target.classList.remove('btn-primary');
       e.target.classList.add('btn-success');
+      setTimeout(fadeToPrimary,3000);
+    }
 
+    const fadeToPrimary = () => {
+      const targetElem = document.getElementById('copyBtn');
+      targetElem.classList.remove('btn-success');
+      targetElem.classList.add('btn-primary');
     }
 
     return (
@@ -109,7 +121,7 @@ class Dashboard extends Component {
               />
             </FormGroup>
 
-            <Button onClick={handleCopy} {...(false) ? {color: 'success'} : {color: 'primary'}}>
+            <Button id='copyBtn' name='copyBtn' onClick={handleCopy} {...(false) ? {color: 'success'} : {color: 'primary'}}>
                 Copy to Clipboard
             </Button>
           </CardFooter>
