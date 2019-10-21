@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kelly-shannon-floral/precache-manifest.0b3f70c12c8c95c0ce68a1b08222798e.js"
+  "/kelly-shannon-floral/precache-manifest.0215dd91d20aa845eba2a8909ed963f4.js"
 );
 
 self.addEventListener('message', (event) => {
