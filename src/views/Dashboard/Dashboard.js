@@ -30,9 +30,9 @@ class Dashboard extends Component {
 
     const handleChange = () => {
       const domainName = 'https://kellyshannonfloral.myshopify.com';
-      const elemTitle = document.getElementById('eventTitle');
-      const elemLocation = document.getElementById('eventLocation');
-      const elemDate = document.getElementById('eventDate');
+      const elemTitle = document.getElementById('funeralTitle');
+      const elemLocation = document.getElementById('funeralLocation');
+      const elemDate = document.getElementById('funeralDate');
       const elemOutput = document.getElementById('output');
 
       const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -40,7 +40,7 @@ class Dashboard extends Component {
       // Hard fix time to get off of midnight and trigger wrong date
       const dateStr = new Date(`${elemDate.value}T10:00:00`).toLocaleDateString("en-US", dateOptions);
 
-      const query = `eventTitle=${clean(elemTitle.value)}&eventLocation=${clean(elemLocation.value)}&eventDate=${dateStr}`;
+      const query = `funeralTitle=${clean(elemTitle.value)}&funeralLocation=${clean(elemLocation.value)}&funeralDate=${dateStr}`;
       const outputText = `<a href='${domainName}/?${query}'>
           Send Flowers Now
         </a>`;
@@ -74,38 +74,38 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Card>
           <CardHeader>
-            <strong>Kelly Shannon Floral - Event Link Creation tool</strong>
+            <strong>Kelly Shannon Floral - Funeral Link Creation tool</strong>
           </CardHeader>
           <CardBody>
             <CardText></CardText>
             <Form>
               <FormGroup>
-                <Label for="eventTitle">Event Title</Label>
+                <Label for="funeralTitle">Funeral Title</Label>
                 <Input 
                   onChange={handleChange} 
                   type="text" 
-                  name="eventTitle" 
-                  id="eventTitle" 
+                  name="funeralTitle" 
+                  id="funeralTitle" 
                   placeholder="Mr. Chapman's Wake" />
               </FormGroup>
 
               <FormGroup>
-                <Label for="eventLocation">Event Location</Label>
+                <Label for="funeralLocation">Funeral Location</Label>
                 <Input 
                   onChange={handleChange} 
                   type="text" 
-                  name="eventLocation" 
-                  id="eventLocation" 
+                  name="funeralLocation" 
+                  id="funeralLocation" 
                   placeholder="Newcomer Funeral Home - Orlando, Fl " />
               </FormGroup>
 
               <FormGroup>
-                <Label for="eventDate">Date</Label>
+                <Label for="funeralDate">Date</Label>
                 <Input
                   onChange={handleChange}
                   type="date"
-                  name="eventDate"
-                  id="eventDate"
+                  name="funeralDate"
+                  id="funeralDate"
                 />
               </FormGroup>
             </Form>
