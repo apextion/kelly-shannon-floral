@@ -29,6 +29,7 @@ class Dashboard extends Component {
     }
 
     const handleChange = () => {
+      const domainName = 'https://kellyshannonfloral.myshopify.com';
       const elemTitle = document.getElementById('eventTitle');
       const elemLocation = document.getElementById('eventLocation');
       const elemDate = document.getElementById('eventDate');
@@ -40,7 +41,7 @@ class Dashboard extends Component {
       const dateStr = new Date(`${elemDate.value}T10:00:00`).toLocaleDateString("en-US", dateOptions);
 
       const query = `eventTitle=${clean(elemTitle.value)}&eventLocation=${clean(elemLocation.value)}&eventDate=${dateStr}`;
-      const outputText = `<a href='https://reactivepixel.com/?${query}'>
+      const outputText = `<a href='${domainName}/?${query}'>
           Send Flowers Now
         </a>`;
 
